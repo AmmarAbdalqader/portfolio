@@ -343,19 +343,22 @@ class _ExperienceCardState extends State<_ExperienceCard> {
                             const SizedBox(height: 16),
 
                             // Tech tags
-                            Wrap(
-                              spacing: 8,
-                              runSpacing: 8,
-                              children: exp.techTags
-                                  .map(
-                                    (t) => TechTag(
-                                      label: t,
-                                      isDark: widget.isDark,
-                                      highlighted: true,
-                                    ),
-                                  )
-                                  .toList(),
+                            Flexible(
+                              child: Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children: exp.techTags
+                                    .map(
+                                      (t) => TechTag(
+                                        label: t,
+                                        isDark: widget.isDark,
+                                        highlighted: true,
+                                      ),
+                                    )
+                                    .toList(),
+                              ),
                             ),
+                            const SizedBox(height: 8),
                           ],
                         ),
                       )
