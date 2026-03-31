@@ -89,7 +89,14 @@ class PortfolioData {
         'Leading cross-functional collaboration with backend engineers, QA, product managers, and UI/UX designers to align on technical requirements and timelines.',
         'Mentoring junior developers on Flutter best practices, architecture patterns, and code review standards.',
       ],
-      techTags: ['Flutter', 'Clean Architecture', 'TDD', 'SDUI', 'Shorebird', 'BLoC'],
+      techTags: [
+        'Flutter',
+        'Clean Architecture',
+        'TDD',
+        'SDUI',
+        'Shorebird',
+        'BLoC',
+      ],
     ),
     Experience(
       role: 'Software Developer',
@@ -107,7 +114,15 @@ class PortfolioData {
         'Authored comprehensive Software Requirements Specification (SRS) documents by gathering and translating complex client requirements.',
         'Maintained version-controlled workflows with Git/GitHub, conducting code reviews and contributing across cross-functional teams.',
       ],
-      techTags: ['Flutter', 'Provider', 'GetX', 'REST APIs', 'SQL Server', 'SSRS', 'MPGS'],
+      techTags: [
+        'Flutter',
+        'Provider',
+        'GetX',
+        'REST APIs',
+        'SQL Server',
+        'SSRS',
+        'MPGS',
+      ],
     ),
   ];
 
@@ -115,7 +130,7 @@ class PortfolioData {
     Project(
       title: 'Ard Super App',
       description:
-      'A large-scale modular super app serving thousands of users with multiple integrated financial, utility, and lifestyle services — built with Clean Architecture and SDUI.',
+          'A large-scale modular super app serving thousands of users with multiple integrated financial, utility, and lifestyle services — built with Clean Architecture and SDUI.',
       category: 'Enterprise Mobile',
       tech: ['Flutter', 'Clean Architecture', 'SDUI', 'BLoC', 'Shorebird'],
       emoji: '🏦',
@@ -123,7 +138,7 @@ class PortfolioData {
     Project(
       title: 'eFawateercom Integration',
       description:
-      'End-to-end integration of the Jordanian national bill payment platform enabling citizens to pay utility, telecom, and government bills seamlessly within mobile apps.',
+          'End-to-end integration of the Jordanian national bill payment platform enabling citizens to pay utility, telecom, and government bills seamlessly within mobile apps.',
       category: 'FinTech',
       tech: ['Flutter', 'REST APIs', 'SQL Server', 'MPGS'],
       emoji: '💳',
@@ -131,7 +146,7 @@ class PortfolioData {
     Project(
       title: 'Fortara Gov System',
       description:
-      'Mobile gateway for the Jordanian Fortara governmental transaction system, handling secure citizen-government financial interactions and official record-keeping.',
+          'Mobile gateway for the Jordanian Fortara governmental transaction system, handling secure citizen-government financial interactions and official record-keeping.',
       category: 'GovTech',
       tech: ['Flutter', 'REST APIs', 'ADO.NET', 'SQL Server'],
       emoji: '🏛️',
@@ -139,7 +154,7 @@ class PortfolioData {
     Project(
       title: 'Enterprise Reporting Suite',
       description:
-      'A comprehensive reporting platform with dynamic dashboards, SSRS integration, and customizable report builders that empowered enterprise clients with real-time business intelligence.',
+          'A comprehensive reporting platform with dynamic dashboards, SSRS integration, and customizable report builders that empowered enterprise clients with real-time business intelligence.',
       category: 'Business Intelligence',
       tech: ['Flutter', 'SSRS', 'Bold Reports', 'SQL Server'],
       emoji: '📊',
@@ -147,7 +162,7 @@ class PortfolioData {
     Project(
       title: 'Cross-Platform ERP Client',
       description:
-      'A feature-rich ERP mobile client built with Flutter integrating complex business workflows, multi-role access, and real-time sync with backend EF Core services.',
+          'A feature-rich ERP mobile client built with Flutter integrating complex business workflows, multi-role access, and real-time sync with backend EF Core services.',
       category: 'Enterprise',
       tech: ['Flutter', 'EF Core', 'Express.js', 'MySQL'],
       emoji: '⚙️',
@@ -155,7 +170,7 @@ class PortfolioData {
     Project(
       title: 'Mobile Banking App',
       description:
-      'Secure mobile banking application with MPGS payment gateway integration, biometric authentication, transaction history, and real-time balance tracking.',
+          'Secure mobile banking application with MPGS payment gateway integration, biometric authentication, transaction history, and real-time balance tracking.',
       category: 'FinTech',
       tech: ['Flutter', 'MPGS', 'Provider', 'SQL Server'],
       emoji: '📱',
@@ -163,37 +178,90 @@ class PortfolioData {
   ];
 
   static const List<TechSkill> skills = [
-    TechSkill(name: 'Flutter', logoAsset: 'assets/logos/flutter.png', category: 'Mobile', level: 5),
-    TechSkill(name: 'Dart', logoAsset: 'assets/logos/dart_logo.png', category: 'Language', level: 5),
-    TechSkill(name: 'Firebase', logoAsset: 'assets/logos/firebase_logo.png', category: 'Backend', level: 4),
-    TechSkill(name: 'SQL Server', logoAsset: 'assets/logos/sqlserver_logo.png', category: 'Database', level: 4),
-    TechSkill(name: 'MySQL', logoAsset: 'assets/logos/mysql_logo.png', category: 'Database', level: 4),
-    TechSkill(name: 'Git', logoAsset: 'assets/logos/git_logo.png', category: 'Tools', level: 5),
-    TechSkill(name: 'Express.js', logoAsset: 'assets/logos/expressjs_logo.png', category: 'Backend', level: 3),
-    TechSkill(name: 'EF Core', logoAsset: 'assets/logos/dotnet_logo.png', category: 'Backend', level: 3),
-    TechSkill(name: 'ADO.NET', logoAsset: 'assets/logos/dotnet_logo.png', category: 'Backend', level: 3),
-    TechSkill(name: 'REST APIs', logoAsset: 'assets/logos/api_logo.png', category: 'Web', level: 5),
+    TechSkill(
+      name: 'Flutter',
+      logoAsset: 'assets/logos/flutter.png',
+      category: 'Mobile',
+      level: 5,
+    ),
+    TechSkill(
+      name: 'Dart',
+      logoAsset: 'assets/logos/dart_logo.png',
+      category: 'Language',
+      level: 5,
+    ),
+    TechSkill(
+      name: 'Firebase',
+      logoAsset: 'assets/logos/firebase_logo.png',
+      category: 'Backend',
+      level: 4,
+    ),
+    TechSkill(
+      name: 'SQL Server',
+      logoAsset: 'assets/logos/sqlserver_logo.png',
+      category: 'Database',
+      level: 4,
+    ),
+    TechSkill(
+      name: 'MySQL',
+      logoAsset: 'assets/logos/mysql_logo.png',
+      category: 'Database',
+      level: 4,
+    ),
+    TechSkill(
+      name: 'Git',
+      logoAsset: 'assets/logos/git_logo.png',
+      category: 'Tools',
+      level: 5,
+    ),
+    TechSkill(
+      name: 'Express.js',
+      logoAsset: 'assets/logos/expressjs_logo.png',
+      category: 'Backend',
+      level: 3,
+    ),
+    TechSkill(
+      name: 'EF Core',
+      logoAsset: 'assets/logos/dotnet_logo.png',
+      category: 'Backend',
+      level: 3,
+    ),
+    TechSkill(
+      name: 'ADO.NET',
+      logoAsset: 'assets/logos/dotnet_logo.png',
+      category: 'Backend',
+      level: 3,
+    ),
+    TechSkill(
+      name: 'REST APIs',
+      logoAsset: 'assets/logos/api_logo.png',
+      category: 'Web',
+      level: 5,
+    ),
   ];
 
   static const List<Certificate> certificates = [
     Certificate(
       title: 'HCIA – Artificial Intelligence',
       issuer: 'Huawei',
-      description: 'Foundations of Artificial Intelligence and Machine Learning, covering neural networks, ML algorithms, and AI application development.',
+      description:
+          'Foundations of Artificial Intelligence and Machine Learning, covering neural networks, ML algorithms, and AI application development.',
       certNo: '010102001437808462731389314',
       emoji: '🤖',
     ),
     Certificate(
       title: 'HCIA – Cloud Computing',
       issuer: 'Huawei',
-      description: 'Cloud infrastructure, services architecture, virtualization, and deployment models on Huawei Cloud platform.',
+      description:
+          'Cloud infrastructure, services architecture, virtualization, and deployment models on Huawei Cloud platform.',
       certNo: '010100802437808063011409',
       emoji: '☁️',
     ),
     Certificate(
       title: 'HCIA – Routing & Switching',
       issuer: 'Huawei',
-      description: 'Networking fundamentals, routing protocols, switching technologies, and enterprise network design principles.',
+      description:
+          'Networking fundamentals, routing protocols, switching technologies, and enterprise network design principles.',
       certNo: '01010010180805065626231',
       emoji: '🔌',
     ),

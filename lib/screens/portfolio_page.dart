@@ -54,9 +54,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
       body: Stack(
         children: [
           // Background particle effect
-          Positioned.fill(
-            child: _BackgroundDecoration(isDark: isDark),
-          ),
+          Positioned.fill(child: _BackgroundDecoration(isDark: isDark)),
 
           // Main content
           Column(
@@ -73,12 +71,30 @@ class _PortfolioPageState extends State<PortfolioPage> {
                   controller: _scrollCtrl,
                   child: Column(
                     children: [
-                      SizedBox(key: _keys['About'], child: HeroSection(isDark: isDark, onNavTap: _scrollTo)),
-                      SizedBox(key: _keys['Experience'], child: ExperienceSection(isDark: isDark)),
-                      SizedBox(key: _keys['Projects'], child: ProjectsSection(isDark: isDark)),
-                      SizedBox(key: _keys['Skills'], child: SkillsSection(isDark: isDark)),
-                      SizedBox(key: _keys['Certificates'], child: CertificatesSection(isDark: isDark)),
-                      SizedBox(key: _keys['Contact'], child: ContactSection(isDark: isDark)),
+                      SizedBox(
+                        key: _keys['About'],
+                        child: HeroSection(isDark: isDark, onNavTap: _scrollTo),
+                      ),
+                      SizedBox(
+                        key: _keys['Experience'],
+                        child: ExperienceSection(isDark: isDark),
+                      ),
+                      SizedBox(
+                        key: _keys['Projects'],
+                        child: ProjectsSection(isDark: isDark),
+                      ),
+                      SizedBox(
+                        key: _keys['Skills'],
+                        child: SkillsSection(isDark: isDark),
+                      ),
+                      SizedBox(
+                        key: _keys['Certificates'],
+                        child: CertificatesSection(isDark: isDark),
+                      ),
+                      SizedBox(
+                        key: _keys['Contact'],
+                        child: ContactSection(isDark: isDark),
+                      ),
                       _Footer(isDark: isDark),
                     ],
                   ),
@@ -139,9 +155,7 @@ class _BackgroundDecoration extends StatelessWidget {
         ),
         // Grid pattern overlay
         Positioned.fill(
-          child: CustomPaint(
-            painter: _GridPainter(isDark: isDark),
-          ),
+          child: CustomPaint(painter: _GridPainter(isDark: isDark)),
         ),
       ],
     );
@@ -156,7 +170,8 @@ class _GridPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = (isDark ? AppColors.darkBorder : AppColors.lightBorder).withOpacity(0.3)
+      ..color = (isDark ? AppColors.darkBorder : AppColors.lightBorder)
+          .withOpacity(0.3)
       ..strokeWidth = 0.5;
 
     const spacing = 60.0;
@@ -206,7 +221,9 @@ class _Footer extends StatelessWidget {
             '© ${DateTime.now().year} Ammar AbdAl-Qader. Built with Flutter 💙',
             style: GoogleFonts.spaceGrotesk(
               fontSize: 12,
-              color: isDark ? AppColors.darkTextMuted : AppColors.lightTextMuted,
+              color: isDark
+                  ? AppColors.darkTextMuted
+                  : AppColors.lightTextMuted,
             ),
           ),
         ],

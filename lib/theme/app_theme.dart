@@ -38,10 +38,7 @@ class AppTheme {
     ),
     textTheme: GoogleFonts.spaceGroteskTextTheme(
       ThemeData.dark().textTheme,
-    ).apply(
-      bodyColor: AppColors.darkText,
-      displayColor: AppColors.darkText,
-    ),
+    ).apply(bodyColor: AppColors.darkText, displayColor: AppColors.darkText),
     useMaterial3: true,
   );
 
@@ -55,10 +52,7 @@ class AppTheme {
     ),
     textTheme: GoogleFonts.spaceGroteskTextTheme(
       ThemeData.light().textTheme,
-    ).apply(
-      bodyColor: AppColors.lightText,
-      displayColor: AppColors.lightText,
-    ),
+    ).apply(bodyColor: AppColors.lightText, displayColor: AppColors.lightText),
     useMaterial3: true,
   );
 }

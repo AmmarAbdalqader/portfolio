@@ -19,8 +19,17 @@ class PortfolioNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Provider.of<ThemeProvider>(context);
     final isDark = theme.isDark;
-    final bg = isDark ? AppColors.darkBg.withOpacity(0.92) : AppColors.lightSurface.withOpacity(0.92);
-    final sections = ['About', 'Experience', 'Projects', 'Skills', 'Certificates', 'Contact'];
+    final bg = isDark
+        ? AppColors.darkBg.withOpacity(0.92)
+        : AppColors.lightSurface.withOpacity(0.92);
+    final sections = [
+      'About',
+      'Experience',
+      'Projects',
+      'Skills',
+      'Certificates',
+      'Contact',
+    ];
 
     return Container(
       height: 64,
@@ -52,12 +61,14 @@ class PortfolioNavBar extends StatelessWidget {
             const Spacer(),
             // Nav items - only show on wide screens
             if (MediaQuery.of(context).size.width > 800)
-              ...sections.map((s) => _NavItem(
-                label: s,
-                isActive: activeSection == s,
-                onTap: () => onNavTap(s),
-                isDark: isDark,
-              )),
+              ...sections.map(
+                (s) => _NavItem(
+                  label: s,
+                  isActive: activeSection == s,
+                  onTap: () => onNavTap(s),
+                  isDark: isDark,
+                ),
+              ),
             const SizedBox(width: 20),
             // Theme toggle
             GestureDetector(
@@ -76,7 +87,9 @@ class PortfolioNavBar extends StatelessWidget {
                 ),
                 child: AnimatedAlign(
                   duration: const Duration(milliseconds: 300),
-                  alignment: isDark ? Alignment.centerRight : Alignment.centerLeft,
+                  alignment: isDark
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
                   child: Padding(
                     padding: const EdgeInsets.all(3),
                     child: CircleAvatar(
@@ -104,7 +117,12 @@ class _NavItem extends StatefulWidget {
   final VoidCallback onTap;
   final bool isDark;
 
-  const _NavItem({required this.label, required this.isActive, required this.onTap, required this.isDark});
+  const _NavItem({
+    required this.label,
+    required this.isActive,
+    required this.onTap,
+    required this.isDark,
+  });
 
   @override
   State<_NavItem> createState() => _NavItemState();
@@ -135,7 +153,9 @@ class _NavItemState extends State<_NavItem> {
                 duration: const Duration(milliseconds: 200),
                 style: GoogleFonts.spaceGrotesk(
                   fontSize: 14,
-                  fontWeight: widget.isActive ? FontWeight.w700 : FontWeight.w500,
+                  fontWeight: widget.isActive
+                      ? FontWeight.w700
+                      : FontWeight.w500,
                   color: color,
                 ),
                 child: Text(widget.label),
@@ -273,17 +293,19 @@ class _AnimatedCardState extends State<AnimatedCard> {
             border: Border.all(
               color: _hovered
                   ? AppColors.accent.withOpacity(0.5)
-                  : (widget.isDark ? AppColors.darkBorder : AppColors.lightBorder),
+                  : (widget.isDark
+                        ? AppColors.darkBorder
+                        : AppColors.lightBorder),
               width: 1.5,
             ),
             boxShadow: _hovered
                 ? [
-              BoxShadow(
-                color: AppColors.accent.withOpacity(0.15),
-                blurRadius: 24,
-                offset: const Offset(0, 8),
-              ),
-            ]
+                    BoxShadow(
+                      color: AppColors.accent.withOpacity(0.15),
+                      blurRadius: 24,
+                      offset: const Offset(0, 8),
+                    ),
+                  ]
                 : [],
           ),
           padding: widget.padding ?? const EdgeInsets.all(24),
@@ -301,7 +323,12 @@ class TechTag extends StatelessWidget {
   final bool isDark;
   final bool highlighted;
 
-  const TechTag({super.key, required this.label, required this.isDark, this.highlighted = false});
+  const TechTag({
+    super.key,
+    required this.label,
+    required this.isDark,
+    this.highlighted = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -310,10 +337,14 @@ class TechTag extends StatelessWidget {
       decoration: BoxDecoration(
         color: highlighted
             ? AppColors.accent.withOpacity(0.15)
-            : (isDark ? AppColors.darkBg : AppColors.lightBorder.withOpacity(0.5)),
+            : (isDark
+                  ? AppColors.darkBg
+                  : AppColors.lightBorder.withOpacity(0.5)),
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
-          color: highlighted ? AppColors.accent.withOpacity(0.4) : Colors.transparent,
+          color: highlighted
+              ? AppColors.accent.withOpacity(0.4)
+              : Colors.transparent,
         ),
       ),
       child: Text(
@@ -321,7 +352,9 @@ class TechTag extends StatelessWidget {
         style: GoogleFonts.spaceGrotesk(
           fontSize: 12,
           fontWeight: FontWeight.w600,
-          color: highlighted ? AppColors.accent : (isDark ? AppColors.darkTextMuted : AppColors.lightTextMuted),
+          color: highlighted
+              ? AppColors.accent
+              : (isDark ? AppColors.darkTextMuted : AppColors.lightTextMuted),
         ),
       ),
     );
@@ -366,24 +399,24 @@ class _GlowButtonState extends State<GlowButton> {
             gradient: widget.outlined
                 ? null
                 : LinearGradient(
-              colors: _hovered
-                  ? [AppColors.accentGlow, AppColors.accentSecondary]
-                  : [AppColors.accent, AppColors.accentGlow],
-            ),
+                    colors: _hovered
+                        ? [AppColors.accentGlow, AppColors.accentSecondary]
+                        : [AppColors.accent, AppColors.accentGlow],
+                  ),
             border: widget.outlined
                 ? Border.all(
-              color: _hovered ? AppColors.accent : AppColors.darkBorder,
-              width: 1.5,
-            )
+                    color: _hovered ? AppColors.accent : AppColors.darkBorder,
+                    width: 1.5,
+                  )
                 : null,
             boxShadow: !widget.outlined && _hovered
                 ? [
-              BoxShadow(
-                color: AppColors.accent.withOpacity(0.4),
-                blurRadius: 20,
-                offset: const Offset(0, 4),
-              ),
-            ]
+                    BoxShadow(
+                      color: AppColors.accent.withOpacity(0.4),
+                      blurRadius: 20,
+                      offset: const Offset(0, 4),
+                    ),
+                  ]
                 : [],
           ),
           child: Row(
@@ -424,7 +457,12 @@ class SkillBar extends StatelessWidget {
   final int level;
   final bool isDark;
 
-  const SkillBar({super.key, required this.name, required this.level, required this.isDark});
+  const SkillBar({
+    super.key,
+    required this.name,
+    required this.level,
+    required this.isDark,
+  });
 
   @override
   Widget build(BuildContext context) {

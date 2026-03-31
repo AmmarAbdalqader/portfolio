@@ -19,26 +19,26 @@ class HeroSection extends StatelessWidget {
 
     return Container(
       constraints: const BoxConstraints(minHeight: 700),
-      padding: EdgeInsets.symmetric(
-        horizontal: isWide ? 80 : 24,
-        vertical: 80,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: isWide ? 80 : 24, vertical: 80),
       child: isWide
           ? Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(flex: 3, child: _HeroText(isDark: isDark, onNavTap: onNavTap)),
-          const SizedBox(width: 60),
-          Expanded(flex: 2, child: _HeroAvatar(isDark: isDark)),
-        ],
-      )
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: _HeroText(isDark: isDark, onNavTap: onNavTap),
+                ),
+                const SizedBox(width: 60),
+                Expanded(flex: 2, child: _HeroAvatar(isDark: isDark)),
+              ],
+            )
           : Column(
-        children: [
-          _HeroAvatar(isDark: isDark),
-          const SizedBox(height: 40),
-          _HeroText(isDark: isDark, onNavTap: onNavTap),
-        ],
-      ),
+              children: [
+                _HeroAvatar(isDark: isDark),
+                const SizedBox(height: 40),
+                _HeroText(isDark: isDark, onNavTap: onNavTap),
+              ],
+            ),
     );
   }
 }
@@ -57,11 +57,7 @@ class _HeroText extends StatelessWidget {
         // Greeting
         Row(
           children: [
-            Container(
-              width: 36,
-              height: 2,
-              color: AppColors.accent,
-            ),
+            Container(width: 36, height: 2, color: AppColors.accent),
             const SizedBox(width: 12),
             Text(
               "Hello, I'm",
@@ -73,23 +69,20 @@ class _HeroText extends StatelessWidget {
               ),
             ),
           ],
-        )
-            .animate()
-            .fadeIn(duration: 600.ms)
-            .slideX(begin: -0.3, end: 0),
+        ).animate().fadeIn(duration: 600.ms).slideX(begin: -0.3, end: 0),
 
         const SizedBox(height: 16),
 
         // Name
         Text(
-          'Ammar\nAbdAl-Qader',
-          style: GoogleFonts.orbitron(
-            fontSize: MediaQuery.of(context).size.width > 700 ? 56 : 40,
-            fontWeight: FontWeight.w900,
-            height: 1.1,
-            color: isDark ? AppColors.darkText : AppColors.lightText,
-          ),
-        )
+              'Ammar\nAbdAl-Qader',
+              style: GoogleFonts.orbitron(
+                fontSize: MediaQuery.of(context).size.width > 700 ? 56 : 40,
+                fontWeight: FontWeight.w900,
+                height: 1.1,
+                color: isDark ? AppColors.darkText : AppColors.lightText,
+              ),
+            )
             .animate()
             .fadeIn(delay: 200.ms, duration: 700.ms)
             .slideY(begin: 0.3, end: 0),
@@ -151,17 +144,15 @@ class _HeroText extends StatelessWidget {
         // Bio
         Text(
           'Experienced Senior Mobile Developer with deep expertise in Flutter, '
-              'scalable super app architecture, and enterprise mobile solutions. '
-              'Passionate about building high-performance, maintainable applications '
-              'that serve large user bases and create real-world impact.',
+          'scalable super app architecture, and enterprise mobile solutions. '
+          'Passionate about building high-performance, maintainable applications '
+          'that serve large user bases and create real-world impact.',
           style: GoogleFonts.spaceGrotesk(
             fontSize: 15,
             height: 1.7,
             color: isDark ? AppColors.darkTextMuted : AppColors.lightTextMuted,
           ),
-        )
-            .animate()
-            .fadeIn(delay: 700.ms, duration: 700.ms),
+        ).animate().fadeIn(delay: 700.ms, duration: 700.ms),
 
         const SizedBox(height: 20),
 
@@ -174,9 +165,7 @@ class _HeroText extends StatelessWidget {
             _StatBadge(value: '10+', label: 'Apps Delivered', isDark: isDark),
             _StatBadge(value: '2', label: 'Companies', isDark: isDark),
           ],
-        )
-            .animate()
-            .fadeIn(delay: 900.ms, duration: 600.ms),
+        ).animate().fadeIn(delay: 900.ms, duration: 600.ms),
 
         const SizedBox(height: 36),
 
@@ -197,9 +186,7 @@ class _HeroText extends StatelessWidget {
               icon: Icons.mail_outline_rounded,
             ),
           ],
-        )
-            .animate()
-            .fadeIn(delay: 1100.ms, duration: 600.ms),
+        ).animate().fadeIn(delay: 1100.ms, duration: 600.ms),
 
         const SizedBox(height: 28),
 
@@ -224,9 +211,7 @@ class _HeroText extends StatelessWidget {
               url: 'mailto:ammarkhalid513@gmail.com',
             ),
           ],
-        )
-            .animate()
-            .fadeIn(delay: 1300.ms),
+        ).animate().fadeIn(delay: 1300.ms),
       ],
     );
   }
@@ -237,7 +222,11 @@ class _StatBadge extends StatelessWidget {
   final String label;
   final bool isDark;
 
-  const _StatBadge({required this.value, required this.label, required this.isDark});
+  const _StatBadge({
+    required this.value,
+    required this.label,
+    required this.isDark,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -265,7 +254,9 @@ class _StatBadge extends StatelessWidget {
             label,
             style: GoogleFonts.spaceGrotesk(
               fontSize: 11,
-              color: isDark ? AppColors.darkTextMuted : AppColors.lightTextMuted,
+              color: isDark
+                  ? AppColors.darkTextMuted
+                  : AppColors.lightTextMuted,
             ),
           ),
         ],
@@ -279,7 +270,11 @@ class _SocialLink extends StatefulWidget {
   final IconData icon;
   final String url;
 
-  const _SocialLink({required this.label, required this.icon, required this.url});
+  const _SocialLink({
+    required this.label,
+    required this.icon,
+    required this.url,
+  });
 
   @override
   State<_SocialLink> createState() => _SocialLinkState();
@@ -300,9 +295,13 @@ class _SocialLinkState extends State<_SocialLink> {
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: _hovered ? AppColors.accent.withOpacity(0.1) : Colors.transparent,
+            color: _hovered
+                ? AppColors.accent.withOpacity(0.1)
+                : Colors.transparent,
             border: Border.all(
-              color: _hovered ? AppColors.accent.withOpacity(0.5) : AppColors.darkBorder,
+              color: _hovered
+                  ? AppColors.accent.withOpacity(0.5)
+                  : AppColors.darkBorder,
             ),
           ),
           child: Row(
@@ -343,82 +342,98 @@ class _HeroAvatar extends StatelessWidget {
         children: [
           // Outer glow ring
           Container(
-            width: 320,
-            height: 320,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: RadialGradient(
-                colors: [
-                  AppColors.accent.withOpacity(0.15),
-                  AppColors.accentGlow.withOpacity(0.05),
-                  Colors.transparent,
-                ],
-              ),
-            ),
-          )
+                width: 320,
+                height: 320,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      AppColors.accent.withOpacity(0.15),
+                      AppColors.accentGlow.withOpacity(0.05),
+                      Colors.transparent,
+                    ],
+                  ),
+                ),
+              )
               .animate(onPlay: (c) => c.repeat())
-              .scaleXY(begin: 0.9, end: 1.05, duration: 3000.ms, curve: Curves.easeInOut)
+              .scaleXY(
+                begin: 0.9,
+                end: 1.05,
+                duration: 3000.ms,
+                curve: Curves.easeInOut,
+              )
               .then()
-              .scaleXY(begin: 1.05, end: 0.9, duration: 3000.ms, curve: Curves.easeInOut),
+              .scaleXY(
+                begin: 1.05,
+                end: 0.9,
+                duration: 3000.ms,
+                curve: Curves.easeInOut,
+              ),
 
           // Rotating dashed ring
           SizedBox(
-            width: 280,
-            height: 280,
-            child: CircularProgressIndicator(
-              value: 0.75,
-              strokeWidth: 1.5,
-              backgroundColor: AppColors.darkBorder,
-              valueColor: const AlwaysStoppedAnimation<Color>(AppColors.accent),
-            ),
-          )
+                width: 280,
+                height: 280,
+                child: CircularProgressIndicator(
+                  value: 0.75,
+                  strokeWidth: 1.5,
+                  backgroundColor: AppColors.darkBorder,
+                  valueColor: const AlwaysStoppedAnimation<Color>(
+                    AppColors.accent,
+                  ),
+                ),
+              )
               .animate(onPlay: (c) => c.repeat())
               .rotate(duration: 10000.ms, begin: 0, end: 1),
 
           // Avatar container
           Container(
-            width: 240,
-            height: 240,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  AppColors.accent.withOpacity(0.3),
-                  AppColors.accentSecondary.withOpacity(0.2),
-                ],
-              ),
-              border: Border.all(
-                color: AppColors.accent.withOpacity(0.4),
-                width: 2,
-              ),
-            ),
-            child: ClipOval(
-              child: Image.asset(
-                'assets/images/profile.png',
-                fit: BoxFit.fitHeight,
-                errorBuilder: (_, _, _) => Container(
-                  color: isDark ? AppColors.darkCard : AppColors.lightCard,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(Icons.person, size: 80, color: AppColors.accent),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Ammar',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.spaceGrotesk(
-                          fontSize: 12,
-                          color: AppColors.darkTextMuted,
-                        ),
-                      ),
+                width: 240,
+                height: 240,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      AppColors.accent.withOpacity(0.3),
+                      AppColors.accentSecondary.withOpacity(0.2),
                     ],
                   ),
+                  border: Border.all(
+                    color: AppColors.accent.withOpacity(0.4),
+                    width: 2,
+                  ),
                 ),
-              ),
-            ),
-          )
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/images/profile.png',
+                    fit: BoxFit.fitHeight,
+                    errorBuilder: (_, _, _) => Container(
+                      color: isDark ? AppColors.darkCard : AppColors.lightCard,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.person,
+                            size: 80,
+                            color: AppColors.accent,
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Ammar',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.spaceGrotesk(
+                              fontSize: 12,
+                              color: AppColors.darkTextMuted,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              )
               .animate()
               .fadeIn(delay: 400.ms, duration: 800.ms)
               .scaleXY(begin: 0.8, end: 1),
@@ -427,33 +442,39 @@ class _HeroAvatar extends StatelessWidget {
           Positioned(
             bottom: 20,
             right: 20,
-            child: Container(
-              width: 52,
-              height: 52,
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.darkCard : AppColors.lightSurface,
-                shape: BoxShape.circle,
-                border: Border.all(color: AppColors.accent.withOpacity(0.5), width: 2),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.accent.withOpacity(0.3),
-                    blurRadius: 12,
-                  ),
-                ],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: FlutterLogo()
+            child:
+                Container(
+                      width: 52,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? AppColors.darkCard
+                            : AppColors.lightSurface,
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: AppColors.accent.withOpacity(0.5),
+                          width: 2,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.accent.withOpacity(0.3),
+                            blurRadius: 12,
+                          ),
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: FlutterLogo(),
 
-                // Image.asset(
-                //   'assets/logos/flutter.png',
-                //   errorBuilder: (_, __, ___) => const Text('F', style: TextStyle(color: AppColors.accent, fontWeight: FontWeight.w900, fontSize: 22)),
-                // ),
-              ),
-            )
-                .animate()
-                .fadeIn(delay: 1000.ms)
-                .scaleXY(begin: 0, end: 1, curve: Curves.elasticOut),
+                        // Image.asset(
+                        //   'assets/logos/flutter.png',
+                        //   errorBuilder: (_, __, ___) => const Text('F', style: TextStyle(color: AppColors.accent, fontWeight: FontWeight.w900, fontSize: 22)),
+                        // ),
+                      ),
+                    )
+                    .animate()
+                    .fadeIn(delay: 1000.ms)
+                    .scaleXY(begin: 0, end: 1, curve: Curves.elasticOut),
           ),
         ],
       ),
